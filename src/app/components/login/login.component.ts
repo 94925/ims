@@ -25,6 +25,7 @@ public loginForm: FormGroup=new FormGroup(
     login(){
       this._loginService.login(this.loginForm.value).subscribe(
         (data:any)=>{
+          sessionStorage.setItem("ims-token",data.token);
           this.router.navigateByUrl("/dashboard");
         },
         (err:any)=>{

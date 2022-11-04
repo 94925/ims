@@ -14,7 +14,16 @@ export class CreatestudentComponent implements OnInit {
       gender: new FormControl (),
       mobile: new FormControl(),
       email :  new FormControl (),
-      batch: new FormControl()
+      batch: new FormControl(),
+      address: new FormControl(
+        {
+          city: new FormControl(),
+          mandal: new FormControl(),
+          district: new FormControl(),
+          state: new FormControl(),
+          pincode: new FormControl(),
+        }
+      )
     
   }
 

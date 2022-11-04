@@ -44,6 +44,22 @@
     <label>pincode:</label>
     <input type="text" formControlName="pincode">
     <br>
+
+    <button (click)="add()">Education</button>
+
+    <div formArrayName="cards">
+        <div *ngFor="let card of cardsFormArray?.controls;let i=index">
+            <div formGroupName="{{i}}">
+                <input type="text" formControlName="qualification" placeholder="qualification">
+                <br>
+                <input type="text" formControlName="year" placeholder="year">
+                <br>
+                <input type="text" formControlName="percentage" placeholder="percentage">
+                <br>
+
+            </div>
+        </div>
+    </div>
     <button (click)="submit()">submit</button>
 
 

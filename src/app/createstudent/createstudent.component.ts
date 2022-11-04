@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-createstudent',
@@ -11,9 +11,9 @@ export class CreatestudentComponent implements OnInit {
   public studentForm: FormGroup = new FormGroup(
     {
       name: new FormControl(),
-      gender: new FormControl (),
+      gender: new FormControl(),
       mobile: new FormControl(),
-      email :  new FormControl (),
+      email: new FormControl(),
       batch: new FormControl(),
       address: new FormControl(
         {
@@ -23,16 +23,32 @@ export class CreatestudentComponent implements OnInit {
           state: new FormControl(),
           pincode: new FormControl(),
         }
-      )
-    
-  }
+      ),
+      cards: new FormArray([])
+    }
 
   )
+  
+  get cardsFormArray() {
+    return this.studentForm.get('cards') as FormArray;
+  }
+
+  add(){
+    this.cardsFormArray.push(
+      new FormGroup(
+        {
+          qualification: new FormControl(),
+          year: new FormControl(),
+          percentage: new FormControl()
+        }
+      )
+    )
+  }
   constructor() { }
 
   ngOnInit(): void {
   }
-  submit(){
+  submit() {
     console.log(this.studentForm);
     this.studentForm.markAllAsTouched();
   }

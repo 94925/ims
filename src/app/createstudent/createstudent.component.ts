@@ -24,17 +24,18 @@ export class CreatestudentComponent implements OnInit {
           pincode: new FormControl(),
         }
       ),
-      cards: new FormArray([])
+      
+      educations: new FormArray([])
     }
 
   )
   
-  get cardsFormArray() {
-    return this.studentForm.get('cards') as FormArray;
+  get educationsFormArray() {
+    return this.studentForm.get('educations') as FormArray;
   }
 
   add(){
-    this.cardsFormArray.push(
+    this.educationsFormArray.push(
       new FormGroup(
         {
           qualification: new FormControl(),
@@ -43,6 +44,9 @@ export class CreatestudentComponent implements OnInit {
         }
       )
     )
+  }
+  delete(i: number){
+    this.educationsFormArray.removeAt(i);
   }
   constructor() { }
 

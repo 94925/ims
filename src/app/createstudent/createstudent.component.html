@@ -45,10 +45,10 @@
     <input type="text" formControlName="pincode">
     <br>
 
-    <button (click)="add()">Education</button>
+    <button (click)="add()"> Add Education Details</button>
 
     <div formArrayName="cards">
-        <div *ngFor="let card of cardsFormArray?.controls;let i=index">
+        <div *ngFor="let card of educationsFormArray?.controls;let i=index">
             <div formGroupName="{{i}}">
                 <input type="text" formControlName="qualification" placeholder="qualification">
                 <br>
@@ -56,10 +56,11 @@
                 <br>
                 <input type="text" formControlName="percentage" placeholder="percentage">
                 <br>
-
+                <button class="btn btn-danger" (click)="delete(i)">delete</button>
             </div>
         </div>
     </div>
+    <br>
     <button (click)="submit()">submit</button>
 
 

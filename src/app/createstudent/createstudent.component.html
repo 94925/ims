@@ -79,6 +79,15 @@
     <input type="text" formControlName="district">
     <br>
 
+    <label>Source type:</label>
+    <input type="radio" name="soucetype" formControlName="sourcetype" value="direct">
+    
+    <label>Direct</label>
+    <input type="radio" name="sourcetype" formControlName="sourcetype" value="refer">
+      <label>Refer</label>
+      <br>
+      
+
     <br>
     <button (click)="submit()">submit</button>
 

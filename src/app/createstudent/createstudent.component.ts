@@ -32,7 +32,10 @@ export class CreatestudentComponent implements OnInit {
           offerDate: new FormControl(),
         }
       ),
-      educations: new FormArray([])
+      educations: new FormArray([]),
+      sourceType: new FormControl(),
+      sourceFrom: new FormControl(),
+      referalName: new FormControl()
     }
 
   )

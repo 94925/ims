@@ -24,7 +24,14 @@ export class CreatestudentComponent implements OnInit {
           pincode: new FormControl(),
         }
       ),
-      
+      company: new FormControl(
+        {
+          name: new FormControl(),
+          location: new FormControl(),
+          package: new FormControl(),
+          offerDate: new FormControl(),
+        }
+      ),
       educations: new FormArray([])
     }
 
